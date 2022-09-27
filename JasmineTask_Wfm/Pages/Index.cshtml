@@ -1,0 +1,26 @@
+﻿@page
+@model JasmineTask_Wfm.Pages.IndexModel
+@{
+}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<div class="text-center">
+    <form>
+        <div class="container">
+            <div class="form-group">
+                <label for="Username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id="Username" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="Password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="Password" required>
+            </div>
+            <br /><br />
+            <div class="form-group">
+                <button type="submit" id="submit">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="~/js//apicall.js"></script>

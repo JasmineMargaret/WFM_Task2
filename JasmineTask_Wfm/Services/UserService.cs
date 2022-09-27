@@ -23,10 +23,10 @@ namespace JasmineTask_Wfm.Services
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
         {
-            new User { Id = 1, UserName = "jasmine",Name = "jasmine",Password = "password", Role="Developer", Email="j@softura.com" },
-            new User { Id = 2, UserName = "peter", Name = "peter", Password = "password", Role="Tester", Email="p@softura.com" },
-            new User { Id = 3, UserName = "shaun", Name = "Shaun", Password = "password", Role="Developer", Email="s@softura.com" },
-            new User { Id = 4, UserName = "nobel", Name = "Alfred", Password = "password", Role="Developer", Email="n@softura.com" }
+            new User { Id = 1, UserName = "jasmine",Name = "jasmine",Password = "password", Role="Manager", Email="j@softura.com" },
+            new User { Id = 2, UserName = "peter", Name = "peter", Password = "password", Role="WFM", Email="p@softura.com" },
+            new User { Id = 3, UserName = "shan", Name = "Shaun", Password = "password", Role="WFM", Email="s@softura.com" },
+            new User { Id = 4, UserName = "sana", Name = "Saniya", Password = "password", Role="Manager", Email="n@softura.com" }
        };
 
         private readonly AppSettings _appSettings;

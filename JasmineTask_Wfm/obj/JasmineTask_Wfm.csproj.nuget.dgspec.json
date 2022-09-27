@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj": {}
+    "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj": {
+    "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
+        "projectUniqueName": "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
         "projectName": "JasmineTask_Wfm",
-        "projectPath": "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
+        "projectPath": "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
         "packagesPath": "C:\\Users\\jasmine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\obj\\",
+        "outputPath": "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jasmine\\AppData\\Roaming\\NuGet\\NuGet.Config",

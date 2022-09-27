@@ -19,6 +19,7 @@ namespace JasmineTask_Wfm
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,7 +35,19 @@ namespace JasmineTask_Wfm
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("*");//while getting
+                                      policy.AllowAnyHeader();//while posting
+                                      policy.AllowAnyMethod();//while posting
+                                  });
+            });
+            services.AddRazorPages();
             services.AddControllers();
+            services.AddControllersWithViews();
             services.TryAddSingleton<IEmployeeService, EmployeeService>();
             services.TryAddSingleton<ISoftlockService, SoftlockService>();
             services.AddScoped<IUserService, UserService>();//security
@@ -54,6 +67,7 @@ namespace JasmineTask_Wfm
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JasmineTask_Wfm v1"));
             }
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
@@ -61,9 +75,15 @@ namespace JasmineTask_Wfm
 
             app.UseAuthorization();
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                         name: "default",
+                         pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
         }
     }

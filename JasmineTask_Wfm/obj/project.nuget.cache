@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "voH8gPRvghxmw/YYsQRvDD4XS2rdENZpggg2aJl6k7vOnO6KpwVAnp1y8luMKnSCnlwhi+oAdgYfG1fpUdbK+Q==",
+  "dgSpecHash": "Ff7Y0h8xg4evgv6eA31iDSp2J6VQ+s21I0xKbVX3S3FzBujxrya4AO9yHmWV7yL1ddpn0LMAsXE0FqcL3kRGpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jasmine\\source\\repos\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
+  "projectFilePath": "C:\\Users\\jasmine\\source\\repos\\Task2&3\\JasmineTask_Wfm\\JasmineTask_Wfm\\JasmineTask_Wfm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jasmine\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jasmine\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
