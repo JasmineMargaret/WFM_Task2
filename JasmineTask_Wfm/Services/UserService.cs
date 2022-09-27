@@ -8,6 +8,8 @@ using System.Text;
 using System;
 using JasmineTask_Wfm.Helpers;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace JasmineTask_Wfm.Services
 {
@@ -20,25 +22,23 @@ namespace JasmineTask_Wfm.Services
 
     public class UserService : IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User> _users = new List<User>
-        {
-            new User { Id = 1, UserName = "jasmine",Name = "jasmine",Password = "password", Role="Manager", Email="j@softura.com" },
-            new User { Id = 2, UserName = "peter", Name = "peter", Password = "password", Role="WFM", Email="p@softura.com" },
-            new User { Id = 3, UserName = "shan", Name = "Shaun", Password = "password", Role="WFM", Email="s@softura.com" },
-            new User { Id = 4, UserName = "sana", Name = "Saniya", Password = "password", Role="Manager", Email="n@softura.com" }
-       };
-
         private readonly AppSettings _appSettings;
-
-        public UserService(IOptions<AppSettings> appSettings)
+        private readonly Jasmine_DBContext _context;
+        public UserService(Jasmine_DBContext context, IOptions<AppSettings> appSettings)
         {
+            _context = context;
             _appSettings = appSettings.Value;
         }
+       // private List<User> _users = new List<User>
+       // {
+       //     new User { Id = 1, UserName = "jasmine",Name = "jasmine",Password = "password", Role="Manager", Email="j@softura.com" },
+       //     new User { Id = 2, UserName = "peter", Name = "peter", Password = "password", Role="WFM", Email="p@softura.com" }
+       //};
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
-            var user = _users.SingleOrDefault(x => x.UserName == model.Username && x.Password == model.Password);
+            //var user = _users.SingleOrDefault(x => x.UserName == model.Username && x.Password == model.Password);
+            var user = GetAll().SingleOrDefault(x => x.UserName == model.Username && x.Password == model.Password);
 
             // return null if user not found
             if (user == null) return null;
@@ -51,12 +51,19 @@ namespace JasmineTask_Wfm.Services
 
         public IEnumerable<User> GetAll()
         {
-            return _users;
+            var query = _context.Users.ToList();
+            return query;
         }
+        //public async Task<IEnumerable<User>> GetAllDB()
+        //{
+        //    var result= await _context.Users.ToListAsync();
+        //    return result;
+        //} 
 
         public User GetById(int id)
         {
-            return _users.FirstOrDefault(x => x.Id == id);
+            //return _users.FirstOrDefault(x => x.Id == id);
+            return _context.Users.FirstOrDefault(x => x.Id == id);
         }
 
         // helper methods

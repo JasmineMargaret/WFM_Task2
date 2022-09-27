@@ -136,6 +136,11 @@ namespace JasmineTask_Wfm.Models
                 entity.HasKey(e => e.UserName)
                     .HasName("PK__Users__C9F284573AD9DE26");
 
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .HasColumnType("NUMBER(5)")
+                .ValueGeneratedNever();
+
                 entity.Property(e => e.UserName)
                     .HasMaxLength(30)
                     .IsUnicode(false);
