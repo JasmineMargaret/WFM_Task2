@@ -42,16 +42,16 @@ namespace JasmineTask_Wfm.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUsers(int id)
+        public IActionResult GetUsers(int id)
         {
-            var users = await _context.Users.FindAsync(id);
+            var users =  _userService.GetById(id);
 
             if (users == null)
             {
                 return NotFound();
             }
 
-            return users;
+            return Ok(users);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, User users)
