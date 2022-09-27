@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JasmineTask_Wfm.Helpers;
 
 namespace JasmineTask_Wfm
 {
@@ -74,6 +75,8 @@ namespace JasmineTask_Wfm
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<JwtMiddleware>();//security
 
             app.UseCors(MyAllowSpecificOrigins);
 
